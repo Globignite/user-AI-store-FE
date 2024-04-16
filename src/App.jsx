@@ -1,27 +1,53 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Button from '@mui/material/Button';
+import React, { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+  
+import { routesJson } from './RoutingsAndLayouts/routesJson';
+import Navbar from './GlobalComponents/Navbar';
+import AdminLayout from './RoutingsAndLayouts/AdminLayout';
+import UserLayouts from './RoutingsAndLayouts/UserLayouts';
+import PublicLayout from './RoutingsAndLayouts/PublicLayout';
 
-// Using the styled utility from MUI which internally uses @emotion/styled
-const MyStyledButton = styled(Button)({
-  background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-  border: 0,
-  borderRadius: 3,
-  boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-  color: 'white',
-  height: 48,
-  padding: '0 30px',
-});
 
-function App() {
+const App = () => {
+  const userRole = 'user'; // This should come from user session or authentication context
+
+  const dynamicImport = (componentPath) => {
+    return lazy(() => import(componentPath));
+  };
+
+  const getLayout = (role) => {
+    if (role === 'admin') return AdminLayout;
+    if (role === 'user') return UserLayouts;
+    return PublicLayout;
+  };
+
+  const Layout = getLayout(userRole);
+
   return (
-    <div style={{textAlign:"center"}}>
-      <h2>mui base template</h2>
-      <MyStyledButton>
-        Styled Button
-      </MyStyledButton>
-    </div>
-  );
-}
+		<Router>
+			<Navbar />
+			<Routes>
+				<Route path="/" element={<Layout />}>
+					{routesJson.map((route, index) => (
+						<Route
+							key={index}
+							path={route.path}
+							element={
+								route.allowedRoles.includes(userRole) ? (
+									<Suspense fallback={<div>Loading...</div>}>
+										{React.createElement(dynamicImport(route.componentPath))}
+									</Suspense>
+								) : (
+                    <Navigate to="/sign-in" replace />
+								)
+							}
+						/>
+					))}
+				</Route>
+				<Route path="*" element={<Navigate to="/" replace />} />
+			</Routes>
+		</Router>
+	);
+};
 
 export default App;
