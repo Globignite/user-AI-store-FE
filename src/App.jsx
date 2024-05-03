@@ -25,7 +25,7 @@ const App = () => {
 
   return (
 		<Router>
-			{/* <Navbar /> */}
+			<Navbar />
 			<Routes>
 				<Route path="/" element={<Layout />}>
 					{routesJson.map((route, index) => (
