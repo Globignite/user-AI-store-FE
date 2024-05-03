@@ -1,13 +1,14 @@
 import React from 'react'
 import './SignUp.scss'
 import { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { Link } from 'react-router-dom';
 export default function SignUp() {
    const [emailError, setEmailError] = useState('');
    const [cpasswordError, setCpasswordError] = useState('');
    const [successfull, setSuccessful] = useState('');
    const [formData, setFormData] = useState({
+
       username: '',
       email: '',
       password: '',
