@@ -18,6 +18,12 @@ export const routesJson = [
 		"title": "Sign In"
 	},
 	{
+		"path": "/sign-up",
+		"componentPath": "./Guest/SignUp",
+		"allowedRoles": ["guest", "user", "admin"],
+		"title": "Sign Up"
+	},
+	{
 		"path": "/about",
 		"componentPath": "./Guest/About",
 		"allowedRoles": ["guest", "user", "admin"],
