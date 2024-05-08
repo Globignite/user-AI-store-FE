@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import './SignUp.scss'
 export default function SignIn() {
+   // const [fillEmail, setFillEmail] = useState("");
+   // const [fillPassword, setFillPassword] = useState(""); 
    const [success, setSuccess] = useState("")
    const [formData,setFormData] = useState({
       email:'',
@@ -15,10 +17,7 @@ export default function SignIn() {
 
    const handleClick = async(e) =>{
       e.preventDefault();
-      if(formData.email==='' | formData.password===''){
-         alert("Fill all input fields");
-         return;
-      }
+     
       try {
          // const res = await axios.post("http://localhost/5173", formData);
          // console.log("response:", res.data);
@@ -48,13 +47,15 @@ export default function SignIn() {
                            <h2>Sign In</h2>
                         </div>
                         <hr />
-                        <form>
+                        <form onSubmit={handleClick}>
                               <div className='inputField' >
                                  <input
                                     type="email"
                                     placeholder="abc@gmail.com"
                                     name='email'
+                                    value={formData.email}
                                     onChange={handleChange}
+                                    required
                                  />
                               </div>
                               <div className='inputField' >
@@ -62,11 +63,13 @@ export default function SignIn() {
                                     type="password"
                                     placeholder="Password"
                                     name='password'
+                                    value={formData.password}
                                     onChange={handleChange}
+                                    required
                                  />
                               </div>
                            <p>Password requirements must be atleast 8 characters long contain a capital letter, a number and speacial symbol</p>
-                           <button onClick={handleClick}>Sign In</button>
+                           <button >Sign In</button>
                            {success? <span>{success}</span>: ""}
                            <div className="line1">
                               <div className="line1-child"></div>
