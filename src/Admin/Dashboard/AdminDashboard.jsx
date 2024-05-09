@@ -1,9 +1,9 @@
 
 
-function AdminDashboard() {
+function publisherDashboard() {
   return (
-    <div>Admin  Dashboard</div>
+    <div>publisher  Dashboard</div>
   )
 }
 
-export default AdminDashboard
+export default publisherDashboard

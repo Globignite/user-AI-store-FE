@@ -2,30 +2,29 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
   
 import { routesJson } from './RoutingsAndLayouts/routesJson';
-import Navbar from './GlobalComponents/Navbar';
-import AdminLayout from './RoutingsAndLayouts/AdminLayout';
+
+import PublisherLayout from './RoutingsAndLayouts/PublisherLayout';
 import UserLayouts from './RoutingsAndLayouts/UserLayouts';
-import PublicLayout from './RoutingsAndLayouts/PublicLayout';
+import GuestLayout from './RoutingsAndLayouts/GuestLayout';
 
 
 const App = () => {
-  const userRole = 'user'; // This should come from user session or authentication context
+  const userRole = 'guest'; // This should come from user session or authentication context
 
   const dynamicImport = (componentPath) => {
     return lazy(() => import(componentPath));
   };
 
   const getLayout = (role) => {
-    if (role === 'admin') return AdminLayout;
+    if (role === 'publisher') return PublisherLayout;
     if (role === 'user') return UserLayouts;
-    return PublicLayout;
+    return GuestLayout;
   };
 
   const Layout = getLayout(userRole);
 
   return (
-		<Router>
-			<Navbar />
+		<Router> 
 			<Routes>
 				<Route path="/" element={<Layout />}>
 					{routesJson.map((route, index) => (

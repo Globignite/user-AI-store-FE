@@ -2,25 +2,31 @@ export const routesJson = [
 	{
 		"path": "/",
 		"componentPath": "./Guest/Home",
-		"allowedRoles": ["guest", "user", "admin"],
+		"allowedRoles": ["guest", "user", "publisher"],
 		"title": "Home"
 	},
 	{
 		"path": "*",
 		"componentPath": "./Guest/NotFound",
-		"allowedRoles": ["guest", "user", "admin"],
+		"allowedRoles": ["guest", "user", "publisher"],
 		"title": "Not Found"
 	},
 	{
 		"path": "/sign-in",
 		"componentPath": "./Guest/SignIn",
-		"allowedRoles": ["guest", "user", "admin"],
+		"allowedRoles": ["guest", "user", "publisher"],
 		"title": "Sign In"
+	},
+	{
+		"path": "/sign-up",
+		"componentPath": "./Guest/SignUp",
+		"allowedRoles": ["guest", "user", "publisher"],
+		"title": "Sign Up"
 	},
 	{
 		"path": "/about",
 		"componentPath": "./Guest/About",
-		"allowedRoles": ["guest", "user", "admin"],
+		"allowedRoles": ["guest", "user", "publisher"],
 		"title": "About"
 	}, 
 	{
@@ -36,9 +42,9 @@ export const routesJson = [
 		"title": "User Dashboard"
 	},
 	{
-		"path": "/admin-dashboard",
-		"componentPath": "./Admin/AdminDashboard",
-		"allowedRoles": ["admin"],
-		"title": "Admin Dashboard"
+		"path": "/publisher-dashboard",
+		"componentPath": "./publisher/publisherDashboard",
+		"allowedRoles": ["publisher"],
+		"title": "publisher Dashboard"
 	}
 ]

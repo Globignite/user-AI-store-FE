@@ -4,8 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #232323;
+  color: rgba(255, 255, 255, 0.87); 
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,13 +12,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+ 
 
+body {
+  background: linear-gradient(to bottom right, #170c36, rgb(33, 24, 77)); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
   
