@@ -56,7 +56,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function PrimarySearchAppBar() {
+export default function PublisherNavbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const [isOpen, setIsOpen] = React.useState(true);
@@ -179,7 +179,7 @@ export default function PrimarySearchAppBar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            ADMIN PANNEL
+            publisher PANNEL
           </Typography>
           <Search sx={{ border:'1px solid gray'}}>
             <SearchIconWrapper>

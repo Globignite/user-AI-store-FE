@@ -1,4 +1,4 @@
-import React from 'react'
+
 import './SignUp.scss'
 import { useState } from 'react';
 // import axios from 'axios';

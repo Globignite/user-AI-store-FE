@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './SignUp.scss'
+import { Link } from 'react-router-dom'
 export default function SignIn() {
    const [success, setSuccess] = useState("")
    const [formData,setFormData] = useState({
@@ -77,7 +78,7 @@ export default function SignIn() {
                               <img srcSet="./google.png" alt="google" />
                               Signup with Google
                               </div>
-                           <p>Already Have Account ? <b style={{cursor:'pointer'}}>Sign Up</b></p>
+                           <p >Already Have Account ? <Link to="/sign-up" style={{cursor:'pointer'}}>Sign Up</Link></p>
                         </form>
                      </div>
                   </div>

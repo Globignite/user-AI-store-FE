@@ -5,7 +5,7 @@ function UserLayouts() {
   return (
     <div>
       <header>
-        <h1>User Header</h1>
+        <h1>User Navbar</h1>
         {/* Navigation or other elements */}
       </header>
       {/* sidebar  */}

@@ -1,12 +1,12 @@
 
 import { Outlet } from 'react-router-dom'
+import GuestNavbar from "../GlobalComponents/GuestNavbar"
 
-function PublicLayout() {
+function GuestLayout() {
   return (
     <div>
       <header>
-        <h1>Public Header</h1>
-        {/* Navigation or other elements */}
+        <GuestNavbar/>
       </header>
       <main>
         <Outlet />  {/* This will render the current route's component */}
@@ -18,4 +18,4 @@ function PublicLayout() {
   )
 }
 
-export default PublicLayout
+export default GuestLayout
