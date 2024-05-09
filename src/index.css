@@ -12,18 +12,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+ 
 
 body {
-  background-image: linear-gradient(to bottom right, #170c36, rgb(33, 24, 77));
-
+  background: linear-gradient(to bottom right, #170c36, rgb(33, 24, 77)); 
   background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
   
