@@ -29,7 +29,6 @@ const App = () => {
         <Route path="about" element={<About />} />
       </Route>
 
-      {/* user pages  =================================== */}
       <Route path="/user" element={<UserLayout />}>
         <Route
           element={
@@ -40,11 +39,11 @@ const App = () => {
             />
           }
         >
+          {/* user routes  =================================== */}
           <Route path="dashboard" element={<UserDashboard />} />
         </Route>
       </Route>
 
-      {/* Publisher routes  =================================== */}
       <Route path="/publisher" element={<PublisherLayout />}>
         <Route
           element={
@@ -55,6 +54,7 @@ const App = () => {
             />
           }
         >
+          {/* Publisher routes  =================================== */}
           <Route path="dashboard" element={<AdminDashboard />} />
         </Route>
       </Route>
