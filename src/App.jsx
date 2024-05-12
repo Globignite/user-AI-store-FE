@@ -1,52 +1,65 @@
-import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-  
-import { routesJson } from './RoutingsAndLayouts/routesJson';
-
-import PublisherLayout from './RoutingsAndLayouts/PublisherLayout';
-import UserLayouts from './RoutingsAndLayouts/UserLayouts';
-import GuestLayout from './RoutingsAndLayouts/GuestLayout';
-
+import { Routes, Route } from "react-router-dom";
+import GuestLayout from "./RoutingsAndLayouts/GuestLayout";
+import RequireAuth from "./RoutingsAndLayouts/RequireAuth.jsx";
+import Home from "./GuestPages/Home";
+import NotFound from "./GuestPages/NotFound";
+import SignIn from "./GuestPages/SignIn";
+import SignUp from "./GuestPages/SignUp";
+import About from "./GuestPages/About";
+import UnAuthorized from "./GuestPages/UnAuthorized.jsx";
+import AdminDashboard from "./Admin/Dashboard/AdminDashboard.jsx";
+import PublisherLayout from "./RoutingsAndLayouts/PublisherLayout.jsx";
+import UserDashboard from "./UserPages/UserDashboard.jsx";
+import UserLayout from "./RoutingsAndLayouts/UserLayout.jsx";
 
 const App = () => {
-  const userRole = 'guest'; // This should come from user session or authentication context
-
-  const dynamicImport = (componentPath) => {
-    return lazy(() => import(componentPath));
-  };
-
-  const getLayout = (role) => {
-    if (role === 'publisher') return PublisherLayout;
-    if (role === 'user') return UserLayouts;
-    return GuestLayout;
-  };
-
-  const Layout = getLayout(userRole);
+  // userRole is one of  {guest , user , publisher, admin}
+  const userRole = "guest";
+  const isSignedIn = false;
 
   return (
-		<Router> 
-			<Routes>
-				<Route path="/" element={<Layout />}>
-					{routesJson.map((route, index) => (
-						<Route
-							key={index}
-							path={route.path}
-							element={
-								route.allowedRoles.includes(userRole) ? (
-									<Suspense fallback={<div>Loading...</div>}>
-										{React.createElement(dynamicImport(route.componentPath))}
-									</Suspense>
-								) : (
-                    <Navigate to="/sign-in" replace />
-								)
-							}
-						/>
-					))}
-				</Route>
-				<Route path="*" element={<Navigate to="/" replace />} />
-			</Routes>
-		</Router>
-	);
+    <Routes>
+      {/* guest routes =================================== */}
+      <Route path="/" element={<GuestLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="UnAuthorized" element={<UnAuthorized />} />
+        <Route path="sign-in" element={<SignIn />} />
+        <Route path="sign-up" element={<SignUp />} />
+        <Route path="about" element={<About />} />
+      </Route>
+
+      {/* user pages  =================================== */}
+      <Route path="/user" element={<UserLayout />}>
+        <Route
+          element={
+            <RequireAuth
+              allowedRoles={["publisher", "user"]}
+              userRole={userRole}
+              isSignedIn={isSignedIn}
+            />
+          }
+        >
+          <Route path="dashboard" element={<UserDashboard />} />
+        </Route>
+      </Route>
+
+      {/* Publisher routes  =================================== */}
+      <Route path="/publisher" element={<PublisherLayout />}>
+        <Route
+          element={
+            <RequireAuth
+              allowedRoles={["publisher"]}
+              userRole={userRole}
+              isSignedIn={isSignedIn}
+            />
+          }
+        >
+          <Route path="dashboard" element={<AdminDashboard />} />
+        </Route>
+      </Route>
+    </Routes>
+  );
 };
 
 export default App;
