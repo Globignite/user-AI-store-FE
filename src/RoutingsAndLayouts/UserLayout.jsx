@@ -1,7 +1,7 @@
 
 import { Outlet } from 'react-router-dom'
 
-function UserLayouts() {
+function UserLayout() {
   return (
     <div>
       <header>
@@ -19,4 +19,4 @@ function UserLayouts() {
   )
 }
 
-export default UserLayouts
+export default UserLayout

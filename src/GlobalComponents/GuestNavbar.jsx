@@ -137,7 +137,7 @@ function ResponsiveAppBar() {
           {/* when not loged in  */}
 
           <Button color="inherit" onClick={handleClick}>
-            Login
+            sign-in
           </Button>
 
           {/* /after logged in   =============== */}
