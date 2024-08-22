@@ -11,6 +11,7 @@ import AdminDashboard from "./Admin/Dashboard/AdminDashboard.jsx";
 import PublisherLayout from "./RoutingsAndLayouts/PublisherLayout.jsx";
 import UserDashboard from "./UserPages/UserDashboard.jsx";
 import UserLayout from "./RoutingsAndLayouts/UserLayout.jsx";
+import ToolDescription from "./GuestPages/ToolDescription/ToolDescription.jsx";
 
 const App = () => {
   // userRole is one of  {guest , user , publisher, admin}
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="sign-in" element={<SignIn />} />
         <Route path="sign-up" element={<SignUp />} />
         <Route path="about" element={<About />} />
+        <Route path="tool/:id" element={<ToolDescription />} />
       </Route>
 
       {/* user pages  =================================== */}
