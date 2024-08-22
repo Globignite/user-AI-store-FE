@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Button,
@@ -7,9 +6,9 @@ import {
   Typography,
   Grid,
   Divider,
-  Link,
 } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
+import { Link } from "react-router-dom";
 
 function SignIn() {
   return (
@@ -129,7 +128,7 @@ function SignIn() {
         {/* Create Account Link */}
         <Typography variant="body2" sx={{ mt: 3 }}>
           Don't have an account?{" "}
-          <Link href="#" underline="hover" sx={{ color: "#ffda47" }}>
+          <Link to="/sign-up" style={{ color: "#ffda47" }}>
             Create Account
           </Link>
         </Typography>
