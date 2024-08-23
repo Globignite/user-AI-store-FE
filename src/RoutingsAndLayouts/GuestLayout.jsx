@@ -1,21 +1,20 @@
-
-import { Outlet } from 'react-router-dom'
-import GuestNavbar from "../GlobalComponents/GuestNavbar"
+import { Outlet } from "react-router-dom";
+import Navbar from "../GuestPages/components/Navbar";
 
 function GuestLayout() {
   return (
     <div>
       <header>
-        <GuestNavbar/>
+        <Navbar />
       </header>
       <main>
-        <Outlet />  {/* This will render the current route's component */}
+        <Outlet /> {/* This will render the current route's component */}
       </main>
-      <footer>
+      {/* <footer>
         <p>My App Footer © 2024</p>
-      </footer>
+      </footer> */}
     </div>
-  )
+  );
 }
 
-export default GuestLayout
+export default GuestLayout;

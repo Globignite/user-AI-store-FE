@@ -23,9 +23,9 @@ const ToolHeader = () => {
       <Box sx={{ position: "relative" }}>
         <Box
           component="img"
-          sx={{ width: "100%", height: "180px", objectFit: "cover" }}
+          sx={{ width: "100%", height: "300px", objectFit: "cover" }}
           alt="AI Image Placeholder"
-          src="https://via.placeholder.com/400x180" // Placeholder image
+          src="https://via.placeholder.com/900x300" // Placeholder image
         />
         <Box
           sx={{
@@ -60,7 +60,7 @@ const ToolHeader = () => {
             </IconButton>
           </Box>
         </Box>
-      </Box> 
+      </Box>
     </Card>
   );
 };
