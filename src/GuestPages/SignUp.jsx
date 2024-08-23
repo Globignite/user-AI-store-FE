@@ -1,167 +1,200 @@
+import React from "react";
+import {
+  Box,
+  Button,
+  Container,
+  TextField,
+  Typography,
+  Grid,
+  Divider,
+} from "@mui/material";
+import GoogleIcon from "@mui/icons-material/Google";
+import { Link } from "react-router-dom";
 
-import './SignUp.scss'
-import { useState } from 'react';
-// import axios from 'axios';
-import { Link } from 'react-router-dom';
-export default function SignUp() {
-   const [emailError, setEmailError] = useState('');
-   const [cpasswordError, setCpasswordError] = useState('');
-   const [successfull, setSuccessful] = useState('');
-   const [formData, setFormData] = useState({
+function SignUp() {
+  return (
+    <Container maxWidth="xs">
+      <Box
+        sx={{
+          backgroundColor: "primary.cardColor",
+          color: "textColor.white",
+          padding: 4,
+          borderRadius: 2,
+          boxShadow: 3,
+          textAlign: "center",
+          mt: 8,
+        }}
+      >
+        <Typography variant="h4" sx={{ color: "textColor.heading", mb: 3 }}>
+          Sign Up
+        </Typography>
 
-      username: '',
-      email: '',
-      password: '',
-      confirmPassword: '',
-   });
+        {/* Name Input */}
+        <TextField
+          label="Name"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            style: { color: "rgba(255, 255, 255, 0.7)" },
+          }}
+          InputProps={{
+            style: {
+              backgroundColor: "primary.footer",
+              color: "textColor.white",
+              borderColor: "rgba(255,255,255,0.3)",
+            },
+            sx: {
+              "& fieldset": {
+                borderColor: "rgba(255, 255, 255, 0.2)",
+              },
+              "&:hover fieldset": {
+                borderColor: "#ffda47",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "#ffda47",
+              },
+            },
+          }}
+        />
 
+        {/* Email Input */}
+        <TextField
+          label="Email"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            style: { color: "rgba(255, 255, 255, 0.7)" },
+          }}
+          InputProps={{
+            style: {
+              backgroundColor: "primary.footer",
+              color: "textColor.white",
+              borderColor: "rgba(255,255,255,0.3)",
+            },
+            sx: {
+              "& fieldset": {
+                borderColor: "rgba(255, 255, 255, 0.2)",
+              },
+              "&:hover fieldset": {
+                borderColor: "#ffda47",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "#ffda47",
+              },
+            },
+          }}
+        />
 
-   const handleChange = (e) => {
-      const { name, value } = e.target;
-      setFormData({ ...formData, [name]: value });
+        {/* Password Input */}
+        <TextField
+          label="Password"
+          type="password"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            style: { color: "rgba(255, 255, 255, 0.7)" },
+          }}
+          InputProps={{
+            style: {
+              backgroundColor: "primary.footer",
+              color: "textColor.white",
+              borderColor: "rgba(255,255,255,0.3)",
+            },
+            sx: {
+              "& fieldset": {
+                borderColor: "rgba(255, 255, 255, 0.2)",
+              },
+              "&:hover fieldset": {
+                borderColor: "#ffda47",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "#ffda47",
+              },
+            },
+          }}
+        />
 
-      if (name === 'email') {
-         if (value.trim() === '') {
-            // Clear the email error if the input is empty
-            setEmailError('');
-         } else {
-            // Regular expression for email validation
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            const isValidEmail = emailPattern.test(value);
-            if (!isValidEmail) {
-               setEmailError(<span className="error"><img src="./error.png" alt="error" /> Invalid email format</span>);
-            } else {
-               setEmailError('');
-            }
-         }
-      }
+        {/* Confirm Password Input */}
+        <TextField
+          label="Confirm Password"
+          type="password"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            style: { color: "rgba(255, 255, 255, 0.7)" },
+          }}
+          InputProps={{
+            style: {
+              backgroundColor: "primary.footer",
+              color: "textColor.white",
+              borderColor: "rgba(255,255,255,0.3)",
+            },
+            sx: {
+              "& fieldset": {
+                borderColor: "rgba(255, 255, 255, 0.2)",
+              },
+              "&:hover fieldset": {
+                borderColor: "#ffda47",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "#ffda47",
+              },
+            },
+          }}
+        />
 
-      if (name === 'confirmPassword') {
-         if (value.trim() === '') {
-            setCpasswordError("");
-         } else if (formData.password !== value) {
-            setCpasswordError(<span className="error"><img src="./error.png" alt="error" /> Passwords do not match</span>);
-         } else {
-            setCpasswordError('');
-         }
-      }
-   };
+        {/* Sign Up Button */}
+        <Button
+          variant="contained"
+          fullWidth
+          sx={{
+            backgroundColor: "#ffda47",
+            color: "#000",
+            fontWeight: "bold",
+            mt: 2,
+            "&:hover": {
+              backgroundColor: "#ffbf00",
+            },
+          }}
+        >
+          Sign Up
+        </Button>
 
+        {/* Divider */}
+        <Divider sx={{ my: 3, color: "rgba(255, 255, 255, 0.3)" }}>OR</Divider>
 
-   const handleClick = async (e) => {
-      e.preventDefault();
-      if (emailError || cpasswordError) {
-         // If there are errors, do not proceed with form submission
-         return;
-      }
-      try {
-         console.log(formData)
-         setFormData({
-            username: '',
-            email: '',
-            password: '',
-            confirmPassword: '',
-         })
-         setSuccessful(<span className="success"><img src="./success.png" alt="success" />SignUp successfull!</span>)
-      } catch (error) {
-         console.error("error on handleClick", error);
-      }
+        {/* Sign Up with Google Button */}
+        <Button
+          variant="outlined"
+          startIcon={<GoogleIcon />}
+          fullWidth
+          sx={{
+            borderColor: "#ffda47",
+            color: "#ffda47",
+            fontWeight: "bold",
+            "&:hover": {
+              borderColor: "#ffda47",
+              backgroundColor: "rgba(255, 255, 255, 0.1)",
+            },
+          }}
+        >
+          Sign up with Google
+        </Button>
 
-   }
-
-   return (
-      <>
-         <div className="bodyContainer">
-            <div className="bodyContainerchild">
-               <div className="signup">
-                  <div className="left">
-                     <div>
-                        <div className="top">
-                           <h2>Sign Up</h2>
-                        </div>
-                        <hr />
-                        <form onSubmit={handleClick}>
-                           <div className='inputField' >
-                              <input
-                                 type="text"
-                                 name='username'
-                                 placeholder="username"
-                                 value={formData.username}
-                                 onChange={handleChange}
-                                 required
-                              />
-                           </div>
-                           <div className='inputField' >
-                              <input
-                                 type="email"
-                                 name='email'
-                                 placeholder="Enter your email"
-                                 value={formData.email}
-                                 onChange={handleChange}
-                                 required
-                              />
-                              {emailError && <span className="error">{emailError}</span>}
-                           </div>
-                           <div className='inputField' >
-                              <input
-                                 type="password"
-                                 name='password'
-
-                                 value={formData.password}
-                                 placeholder="Password"
-                                 required
-                                 onChange={handleChange}
-
-                              />
-                           </div>
-                           <div className='inputField' >
-                              <input
-                                 type="password"
-                                 name='confirmPassword'
-                                 id='confirmPassword'
-                                 placeholder="confirm password"
-                                 value={formData.confirmPassword}
-                                 required
-                                 onChange={handleChange}
-
-                              />
-                              {cpasswordError && <span className="error">{cpasswordError}</span>}
-                              {/* <span id='error'>Error: passwords do not match</span> */}
-                           </div>
-
-
-                           <p>Password requirements must be atleast 8 characters long contain a capital letter, a number and speacial symbol</p>
-                           <button >SignUp</button>
-                           {successfull && <span className="success">{successfull}</span>}
-                           <div className="line1">
-                              <div className="line1-child"></div>
-                              <div>or</div>
-                              <div className="line1-child"></div>
-                           </div>
-                           <div className='signupgoogle'>
-                              <img srcSet="./google.png" alt="google" />
-                              Signup with Google
-                           </div>
-                           <p>Already have an Account ?<Link to='/sign-in'> <b style={{ cursor: 'pointer' }}>SignIn</b></Link></p>
-                        </form>
-                     </div>
-                  </div>
-                  <div className="right">
-                     {/* <span className="AiToolTitle">Ai Tools</span> */}
-                     <div className="wrapper">
-                        <span>A</span>
-                        <span>i</span>
-                        <span>-</span>
-                        <span>T</span>
-                        <span>o</span>
-                        <span>o</span>
-                        <span>l</span>
-                        <span>s</span>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </>
-   )
+        {/* Already have an account */}
+        <Typography variant="body2" sx={{ mt: 3 }}>
+          Already have an account?{" "}
+          <Link to="/sign-in" style={{ color: "#ffda47" }}>
+            Sign In
+          </Link>
+        </Typography>
+      </Box>
+    </Container>
+  );
 }
+
+export default SignUp;
