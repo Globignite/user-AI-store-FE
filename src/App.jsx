@@ -7,8 +7,6 @@ import SignIn from "./GlobalComponents/SignIn.jsx";
 import SignUp from "./GlobalComponents/SignUp.jsx";
 import About from "./GuestPages/About";
 import UnAuthorized from "./GlobalComponents/UnAuthorized.jsx";
-import AdminDashboard from "./Admin/Dashboard/AdminDashboard.jsx";
-import PublisherLayout from "./RoutingsAndLayouts/PublisherLayout.jsx";
 import UserLayout from "./RoutingsAndLayouts/UserLayout.jsx";
 import ToolDescription from "./GuestPages/ToolDescription/ToolDescription.jsx";
 import SearchResult from "./GuestPages/SearchResult/SearchResult.jsx";
@@ -17,7 +15,6 @@ import RatedReviewed from "./UserPages/RatedReviewed.jsx";
 import MyHub from "./UserPages/MyHub.jsx";
 
 console.log("netlify");
-
 
 const App = () => {
   return (

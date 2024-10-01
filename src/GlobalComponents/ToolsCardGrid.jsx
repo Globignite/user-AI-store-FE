@@ -1,4 +1,4 @@
-import React from "react";
+ 
 import {
   Box,
   Grid,
@@ -8,7 +8,7 @@ import {
   Avatar,
   Chip,
 } from "@mui/material";
-import { Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 function ToolsCardGrid() {
   const navigate = useNavigate();

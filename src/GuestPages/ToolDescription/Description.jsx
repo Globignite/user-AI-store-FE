@@ -1,7 +1,7 @@
-import React from "react";
+ 
 import { Container, Grid, Box, Typography, IconButton } from "@mui/material";
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
-import FlagIcon from "@mui/icons-material/Flag";
+ 
 
 function Description() {
   return (

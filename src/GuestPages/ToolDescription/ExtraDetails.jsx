@@ -1,4 +1,4 @@
-import React from "react";
+ 
 import {
   Container,
   Grid,
@@ -14,7 +14,7 @@ import PersonIcon from "@mui/icons-material/Person"; // Developer Name Icon
 import GavelIcon from "@mui/icons-material/Gavel"; // License Type Icon
 import EmailIcon from "@mui/icons-material/Email"; // Contact Mail Icon
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday"; // Release Date Icon
-import LabelIcon from "@mui/icons-material/Label"; // Tags/Keywords Icon
+ 
 
 function Description() {
   return (

@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Box, Typography, Button, Container } from "@mui/material";
 import { Link } from "react-router-dom";
 
@@ -33,7 +33,7 @@ function NotFound() {
           Page Not Found
         </Typography>
         <Typography variant="body1" sx={{ color: "textColor.cardDesc", mb: 4 }}>
-          The page you are looking for doesn't exist or has been moved.
+          The page you are looking for doesn&apos;t exist or has been moved.
         </Typography>
         <Button
           component={Link}

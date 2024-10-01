@@ -38,7 +38,7 @@ const Home = () => {
         >
           Embark on a journey into the future of Artificial Intelligence with
           [Your Website Name]. “Our platform is not just another collection of
-          tools it's a dynamic ecosystem designed to empower developers and
+          tools it&apos;s a dynamic ecosystem designed to empower developers and
           enthusiasts alike.”
         </Typography>
         <TopTools />
