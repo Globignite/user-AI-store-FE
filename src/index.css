@@ -9,6 +9,7 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 .search_input {
@@ -27,12 +28,11 @@ body {
   border: none;
   background-color: transparent;
   outline: none;
-  font-family: "Poppins", sans-serif;
 }
 
 ::-webkit-scrollbar {
   width: 5px;
-  height: 8px; 
+  height: 8px;
   background-color: #272955;
   border-right: 0.5px solid #525485;
 }
@@ -42,4 +42,9 @@ body {
   /* background: #0d9276; */
   background: rgba(156, 156, 156, 0.548);
   background-color: #525485;
+}
+
+/* landing page slider arrow */
+.react-multiple-carousel__arrow {
+  z-index: 50 !important;
 }

@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "../GuestPages/components/Navbar";
+import Navbar from "../GlobalComponents/Navbar";
 
 function GuestLayout() {
   return (
@@ -7,7 +7,7 @@ function GuestLayout() {
       <header>
         <Navbar />
       </header>
-      <main>
+      <main style={{ paddingTop: 50 }}>
         <Outlet /> {/* This will render the current route's component */}
       </main>
       {/* <footer>

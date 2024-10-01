@@ -266,7 +266,7 @@ function SearchSection() {
         {/* Advance Search Button */}
         <Button
           component={Link}
-          to="/search-result"
+          to="/search"
           variant="contained"
           sx={{
             backgroundColor: "#08a181",
@@ -277,7 +277,7 @@ function SearchSection() {
             },
             minWidth: 200,
           }}
-          onClick={() => navigate("/search-result")}
+          onClick={() => navigate("/search")}
         >
           search
         </Button>

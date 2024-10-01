@@ -99,7 +99,7 @@ function ToolsCardGrid() {
                 borderRadius: 2,
                 boxShadow: 3,
                 overflow: "hidden",
-                cursor:"pointer"
+                cursor: "pointer",
               }}
               onClick={() => navigate("/tool/345")}
             >

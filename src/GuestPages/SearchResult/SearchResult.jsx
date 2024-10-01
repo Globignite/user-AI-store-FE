@@ -1,7 +1,7 @@
 import { Box, Container } from "@mui/material";
-import SearchSection from "../components/SearchSection";
+import SearchSection from "../../GlobalComponents/SearchSection";
 import YourFilters from "./YourFilters";
-import ToolsCardGrid from "../components/ToolsCardGrid";
+import ToolsCardGrid from "../../GlobalComponents/ToolsCardGrid";
 
 function SearchResult() {
   return (

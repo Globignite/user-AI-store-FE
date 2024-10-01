@@ -1,10 +1,10 @@
 import { Box, Container, Typography } from "@mui/material";
-import Counters from "./components/Counters";
-import Information from "./components/Information";
-import GetUpdates from "./components/GetUpdates";
-import TopTools from "./components/TopTools";
-import Footer from "./components/Footer";
-import SearchSection from "./components/SearchSection";
+import Counters from "./Counters";
+import Information from "./Information";
+import GetUpdates from "./GetUpdates";
+import TopTools from "./TopTools";
+import Footer from "../../GlobalComponents/Footer";
+import SearchSection from "../../GlobalComponents/SearchSection";
 
 const Home = () => {
   return (

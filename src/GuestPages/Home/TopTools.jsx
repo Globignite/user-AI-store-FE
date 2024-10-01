@@ -1,5 +1,5 @@
 import { Box } from "@mui/material"
-import Cards from "./Cards";
+import Cards from "../../GlobalComponents/Cards";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 

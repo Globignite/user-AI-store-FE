@@ -77,7 +77,7 @@ function AdvancedSearchModal({ open, onClose }) {
             position: "absolute",
             right: 3,
             top: 3,
-            cursor:"pointer"
+            cursor: "pointer",
           }}
           onClick={onClose}
         />

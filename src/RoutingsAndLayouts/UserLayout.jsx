@@ -1,22 +1,21 @@
-
-import { Outlet } from 'react-router-dom'
+import { Outlet } from "react-router-dom";
+import Navbar from "../GlobalComponents/Navbar";
 
 function UserLayout() {
   return (
     <div>
       <header>
-        <h1>User Navbar</h1>
-        {/* Navigation or other elements */}
+        <Navbar />
       </header>
       {/* sidebar  */}
-      <main>
-        <Outlet />  {/* This will render the current route's component */}
+      <main style={{ padding: 20, marginTop: 50 }}>
+        <Outlet /> {/* This will render the current route's component */}
       </main>
-      <footer>
+      {/* <footer>
         <p>My App Footer © 2024</p>
-      </footer>
+      </footer> */}
     </div>
-  )
+  );
 }
 
-export default UserLayout
+export default UserLayout;
