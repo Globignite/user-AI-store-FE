@@ -14,7 +14,7 @@ import Logout from "./GlobalComponents/Logout.jsx";
 import RatedReviewed from "./UserPages/RatedReviewed.jsx";
 import MyHub from "./UserPages/MyHub.jsx";
 
-console.log("netlify");
+console.log("netlify 2");
 
 const App = () => {
   return (
