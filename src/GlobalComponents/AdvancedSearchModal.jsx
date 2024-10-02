@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import PropTypes from "prop-types";
 import {
   Box,
   Button,
-  Drawer,
   Typography,
   List,
   ListItem,
@@ -171,3 +171,8 @@ function AdvancedSearchModal({ open, onClose }) {
 }
 
 export default AdvancedSearchModal;
+
+AdvancedSearchModal.propTypes = {
+  open: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+};

@@ -1,12 +1,4 @@
-import React from "react";
-import {
-  Card,
-  CardContent,
-  Typography,
-  Box,
-  IconButton,
-  Avatar,
-} from "@mui/material";
+import { Card, Typography, Box, IconButton, Avatar } from "@mui/material";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import RefreshIcon from "@mui/icons-material/Refresh";
 

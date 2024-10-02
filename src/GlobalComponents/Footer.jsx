@@ -3,7 +3,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import XIcon from "@mui/icons-material/X";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import YouTubeIcon from "@mui/icons-material/YouTube";
+ 
 
 const Footer = () => {
   const scrollToTop = () => {

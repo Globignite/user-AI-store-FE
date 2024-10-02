@@ -1,5 +1,6 @@
 import { useLocation, Navigate, Outlet } from "react-router-dom";
 import { useUser } from "./UserContext";
+import PropTypes from 'prop-types';
 
 const RequireAuth = ({ allowedRoles }) => {
   const location = useLocation();
@@ -15,3 +16,8 @@ const RequireAuth = ({ allowedRoles }) => {
 };
 
 export default RequireAuth;
+
+// Prop validation using prop-types
+RequireAuth.propTypes = {
+  allowedRoles: PropTypes.arrayOf(PropTypes.string).isRequired,
+};

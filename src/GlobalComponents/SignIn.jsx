@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Box,
   Button,
   Container,
   TextField,
   Typography,
-  Grid,
   Divider,
   Alert,
 } from "@mui/material";
@@ -233,7 +232,7 @@ function SignIn() {
 
         {/* Create Account Link */}
         <Typography variant="body2" sx={{ mt: 3 }}>
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link to="/sign-up" style={{ color: "#ffda47" }}>
             Create Account
           </Link>
